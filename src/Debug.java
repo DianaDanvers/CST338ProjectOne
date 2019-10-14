@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Debug {
-    void main(){
+    public static void main(String[] args) {
         School SCD = new School("SCD");
 
         Integer num = 0;
@@ -129,7 +129,7 @@ public class Debug {
                 SCD.register (305, 1111);
                 SCD.register (305, 2222);
                 SCD.putScore (305, 1111, 100.0);
-                SCD.putScore (305, 2222, 50.0);
+                SCD.putScore (305, 2222, 50);
 
                 course305 = SCD.getCourse(305);
                 course305.updateLocation("ERROR ROOM");

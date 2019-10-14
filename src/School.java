@@ -3,6 +3,16 @@ import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Scanner;
 /*
+    Title: ProjectOne
+    Abstract: This project is to emulate the functionality of a university's database.
+    In this program, the User can create a School, which holds three objects: Students, Courses, and Instructors.
+    The User may perform: queries to info on all three objects, add Courses, assigned Instructors to Courses, and register Students for Courses.
+    The queried info is explicitly calculating averages! Courses show Student averages, Students show average of all their Courses' scores.
+    Student's Course scores may be updated, should they be enrolled in that Course. Courses may only be deleted when nobody is enrolled.
+    Instructors are required to update the scores as well as know how many Students are enrolled in their Course(s).
+    Author: Diana Andersen
+    Date: 10/5/19
+
     Class Notes: All methods query if the Object exists or not first
  */
 
@@ -182,7 +192,8 @@ public class School {
         System.out.println("No employee with email " + email);
     }
 
-    void putScore(Integer courseID, Integer studentID, Double courseScore) {
+    void putScore(Integer courseID, Integer studentID, Number score) {
+        Double courseScore = score.doubleValue();
         String error = "\nGrade addition failed - ";
         // Checks if Student enrolled in Course
         if (doesExist(studentID, "s", error) && doesExist(courseID, "c", error)){
